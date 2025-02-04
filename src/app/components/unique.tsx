@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import pinkBackground from '@/app/images/pink.png'; // Importing pink background image
+import pinkBackground from '../images/pink.png'
 
 function Unique() {
   return (
