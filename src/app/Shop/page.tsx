@@ -1,9 +1,7 @@
 "use client";
 import { client } from '../../sanity/lib/client';
-import { urlFor } from '../../sanity/lib/image';
 import { Product } from '../../type/Product';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import ProductListing from '../components/ProductListing';
 
 const ShopPage = () => {
