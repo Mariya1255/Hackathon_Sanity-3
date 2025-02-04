@@ -103,7 +103,7 @@ const CheckoutPage = () => {
 
             {/* City */}
             <div>
-              <label htmlFor="city" className="block text-sm font-semibold text-gray-700">
+              <label htmlFor="city" className="block text-sm font-semibold text-gray-800">
                 City
               </label>
               <input

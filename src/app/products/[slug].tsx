@@ -1,9 +1,9 @@
 "use client";
 import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
-import { Product } from '@/type/Product';
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import { urlFor } from '@/sanity/lib/image';
+import { Product } from '@/type/Product';
 
 const ProductDetails = ({ product }: { product: Product }) => {
   if (!product) {

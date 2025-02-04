@@ -1,10 +1,10 @@
 "use client";
-import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
-import { Product } from '@/type/Product';
+import { client } from '../../sanity/lib/client';
+import { urlFor } from '../../sanity/lib/image';
+import { Product } from '../../type/Product';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import ProductListing from '../components/ProductListing';
 
 const ShopPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -43,51 +43,19 @@ const ShopPage = () => {
 
       {/* Filter Section */}
       <div className="flex justify-center space-x-4 py-6">
-        <button
-          onClick={() => handleFilter('All')}
-          className={`px-4 py-2 rounded ${category === 'All' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          All
-        </button>
-        <button
-          onClick={() => handleFilter('Chair')}
-          className={`px-4 py-2 rounded ${category === 'Chair' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          Chair
-        </button>
-        <button
-          onClick={() => handleFilter('Sofa')}
-          className={`px-4 py-2 rounded ${category === 'Sofa' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-        >
-          Sofa
-        </button>
+        {['All', 'Chair', 'Sofa'].map((cat) => (
+          <button
+            key={cat}
+            onClick={() => handleFilter(cat)}
+            className={`px-4 py-2 rounded ${category === cat ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
 
-      {/* Product Grid */}
-      <div className="p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
-            
-              <div className="flex flex-col bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                {product.image && (
-                  <Image
-                    src={urlFor(product.image).url()}
-                    alt={product.name}
-                    width={500}
-                    height={400}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                )}
-                <div className="mt-4">
-                  <h3 className="text-xl font-semibold">{product.name}</h3>
-                  <p className="mt-2 text-gray-600">{product.description}</p>
-                  <span className="text-lg font-bold">${product.price}</span>
-                </div>
-              </div>
-            
-          ))}
-        </div>
-      </div>
+      {/* Product List with Pagination */}
+      <ProductListing products={filteredProducts} />
     </div>
   );
 };

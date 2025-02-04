@@ -15,7 +15,7 @@ function CreatorPage() {
             <div className="flex-shrink-0">
               <Image
                 src="/profile.png" // Path to your image in the public folder
-                alt="Muhammad Talha"
+                alt="Mariya khan"
                 width={150}
                 height={150}
                 className="rounded-full shadow-lg-[#1D3178]"

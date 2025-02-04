@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { client } from '@/sanity/lib/client'; // Ensure this path is correct
-import { Product } from '@/type/Product'; // Ensure this path is correct
-import { urlFor } from '@/sanity/lib/image';
+import { client } from '../../sanity/lib/client'; // Ensure this path is correct
+import { Product } from '../../type/Product'; // Ensure this path is correct
+import { urlFor } from '../../sanity/lib/image';
 import Link from 'next/link';
 
 

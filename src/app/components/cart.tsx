@@ -1,8 +1,8 @@
-import { Product } from '@/type/Product';
+import { Product } from '../../type/Product';
 import React, { useState, useEffect } from 'react';
 import { getCart, updateCartQuantity } from '../../../action/action';
 import Image from 'next/image';
-import { urlFor } from '@/sanity/lib/image';
+import { urlFor } from '../../sanity/lib/image';
 import Swal from 'sweetalert2';
 
 const Cart = () => {

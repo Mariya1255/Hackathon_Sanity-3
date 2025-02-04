@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { HeartIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
-import { Product } from "@/type/Product";
-import { query } from "@/sanity/lib/query";
+import { client } from "../../sanity/lib/client";
+import { urlFor } from "../../sanity/lib/image";
+import { Product } from "../../type/Product";
+import { query } from "../..//sanity/lib/query";
 import { addtoCart } from "../../../action/action";
 import Swal from "sweetalert2";
 
